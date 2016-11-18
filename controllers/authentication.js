@@ -8,7 +8,9 @@ function tokenForUser(user) {
 }
 
 exports.signin = function(req, res, next){
-  
+  // user has been authenticated just needs token
+  //  passport has added user to req.user
+  res.send({token: tokenForUser(req.user)});
 }
 
 
